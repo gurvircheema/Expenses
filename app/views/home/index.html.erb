@@ -1,0 +1,9 @@
+<p>Today is <%= Date.today.strftime("%A") %>, <%= Date.current.strftime("%B %d, %Y") %> and time is <%= Time.now.strftime("%I:%M:%S %p") %>, TimeZone: <%= Time.now.strftime("%Z") %></p>
+<h1>Manage your expenses</h1>
+<% if current_user %>
+<p>
+	Logged in as <%= link_to current_user.user, user_path(current_user) %>, <%= link_to "Log Out",session_path("current"), method: "delete" %>
+</p>
+<% else %>
+<p>Already a user? <%= link_to "Log in", login_url %>, New user? <%= link_to "Sign Up", signup_path %> </p>
+<% end %>
