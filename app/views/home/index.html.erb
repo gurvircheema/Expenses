@@ -1,9 +1,14 @@
-<p>Today is <%= Date.today.strftime("%A") %>, <%= Date.current.strftime("%B %d, %Y") %> and time is <%= Time.now.strftime("%I:%M:%S %p") %>, TimeZone: <%= Time.now.strftime("%Z") %></p>
-<h1>Manage your expenses</h1>
+
+<p>Its <%= Date.today.strftime("%A") %>, <%= Date.current.strftime("%B %d, %Y") %> and time is <%= Time.now.strftime("%I:%M:%S %p") %>, TimeZone: <%= Time.now.strftime("%Z") %></p>
+
+<div class="jumbotron" background-image: image-url("bg.jpg">
+	<h1>Manage your expenses</h1>
 <% if current_user %>
-<p>
-	Logged in as <%= link_to current_user.user, user_path(current_user) %>, <%= link_to "Log Out",session_path("current"), method: "delete" %>
+<p class="lead">
+	Currently logged in as <%= link_to current_user.user, user_path(current_user), class: "" %>, <%= link_to "Log Out",session_path("current"), method: "delete", class: "btn btn-lg btn-danger" %>
 </p>
 <% else %>
-<p>Already a user? <%= link_to "Log in", login_url %>, New user? <%= link_to "Sign Up", signup_path %> </p>
+<p>Already a user? <%= link_to "Log in", login_url,class: "btn btn-default btn-lg" %> New user? <%= link_to "Sign Up", signup_path,class: "btn btn-default btn-lg" %> </p>
 <% end %>
+</div>
+

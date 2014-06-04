@@ -1,26 +1,48 @@
-<h2><%= current_user.user %></h2>
-<p><%= link_to "Home Page", root_url %>,<%= link_to "Log Out",session_path("current"), method: "delete" %></p>
-<h3>Expenses</h3>
+<h2>Welcome <b><i><%= current_user.user %></i></b></h2>
 
-<table id="transactions">
+<h3>All expenses and savings</h3>
+
+<table id="transactions" class="table table-hover">
 	<thead>
 		<tr>
 			<th>Date</th>
 			<th>Description</th>
 			<th>Amount</th>
-			<th>Expense/Income</th>
+			<th>Income</th>
 		</tr>
 	</thead>
 	<tbody>
-		<%= @user.transactions.each do |f| %>
+		<% @transactions.each do |f| %>
+		<% if f.income %>
+		<tr class="success">
+
+			<td><%= f.created_at.strftime("%B %d, %Y") %></td>
+			<td><%= f.description %></td>
+			<td><%= f.amount %></td>
+			<td><%= f.income %></td>
+		</tr>
+		<% else %>
 		<tr>
-			<td><%= f.created_at %></td>
+
+			<td><%= f.created_at.strftime("%B %d, %Y") %></td>
 			<td><%= f.description %></td>
 			<td><%= f.amount %></td>
 			<td><%= f.income %></td>
 		</tr>
 		<% end %>
+		<% end %>
 	</tbody>
 </table>
 
-<%= link_to "New transaction", new_transaction_path %>
+
+<% @transactions.each do |f| %>
+	<% if f.income %>
+		<% @total = @total + f.amount %>
+	<% else %>
+		<% @total = @total - f.amount %>
+	<% end %>
+<% end %>
+
+<h4>Total: <%= @total %></h4>
+
+<%= link_to "New transaction", new_transaction_path, class: "btn btn-lg btn-primary" %>

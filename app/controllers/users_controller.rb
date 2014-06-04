@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-  before_filter :authorize
-  
+  before_filter :authorize, except: ["new", "create"]
+
   def new
   	@user = User.new
   end
@@ -15,6 +15,14 @@ class UsersController < ApplicationController
   		render "new"
   	end
   	
+  end
+
+  def show
+    # @user = User.find(params[:id])
+    @transactions = current_user.transactions.collect  
+    @total = 0
+   
+    
   end
 
   private

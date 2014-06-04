@@ -1,11 +1,14 @@
 class TransactionsController < ApplicationController
+
+	before_filter :authorize
 	def new
 		@transaction = Transaction.new
+		@categories = Category.all
 	end
 
 	def create
-		@transaction = Transaction.new(trans_params)
-
+		@categories = Category.all
+		@transaction = current_user.transactions.new(trans_params)
 		if @transaction.save
 			redirect_to user_path("current_user"), notice: "New transaction added"
 		else
@@ -15,6 +18,6 @@ class TransactionsController < ApplicationController
 
 	private
 		def trans_params
-			params.require(:transaction).permit(:description,:amount,:income)
+			params.require(:transaction).permit(:description,:amount,:income,:user_id,:category_id)
 		end
 end
