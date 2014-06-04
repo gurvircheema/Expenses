@@ -6,6 +6,10 @@ gem 'rails', '4.0.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+# Use pg as the database for production environment
+gem 'pg'
+gem 'i18n', '0.6.9'
+
 # Use bootstrap css
 # gem 'twitter-bootstrap-rails'
 
@@ -20,6 +24,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'therubyracer'
 gem 'less-rails'
+gem 'rails_12factor', group: :production
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -48,3 +53,5 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+ruby "2.0.0"
