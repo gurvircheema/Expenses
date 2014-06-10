@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
   		redirect_to new_session_path, alert: "Restricted unauthorized access"if current_user.nil?
   	end
 
+    def admin?
+      redirect_to new_session_path, alert: "Restricted unauthorized access" unless current_user.user == "Garry"
+    end
+
 end

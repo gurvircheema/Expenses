@@ -22,7 +22,6 @@ class UsersController < ApplicationController
     @transactions = current_user.transactions.collect  
     @total = 0
    
-    
   end
 
   private
