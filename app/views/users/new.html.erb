@@ -1,39 +1,40 @@
-<div class="row">
-	<div class="col-md-6 col-md-offset-4">
-		<h1>User Sign Up</h1>
-		<%= form_for @user, class:"form-horizontal" do |f| %>
 
-			<% if @user.errors.any? %>
-			    <div class="error_messages">
-			      <h2>Form is invalid</h2>
-			      <ul>
-			        <% @user.errors.full_messages.each do |message| %>
-			          <li><%= message %></li>
-			        <% end %>
-			      </ul>
-			    </div>
-		  	<% end %>
+<h1 class="col-sm-offset-2">User Sign Up</h1><br/>
+<%= form_for @user, class: "form-horizontal center" do |f| %>
+	<fieldset>
+	<% if @user.errors.any? %>
+	    <div class="error_messages">
+	      <h2>Form is invalid</h2>
+	      <ul>
+	        <% @user.errors.full_messages.each do |message| %>
+	          <li><%= message %></li>
+	        <% end %>
+	      </ul>
+	    </div>
+  	<% end %>
 
-			<div class="form-group">
-				<%= f.label :user %><br/>
-				<%= f.text_field :user %>
-			</div>
-			<div class="form-group">
-				<%= f.label :email %><br/>
-				<%= f.text_field :email %>
-			</div>
-			<div class="form-group">
-				<%= f.label :password %><br/>
-				<%= f.password_field :password %>
-			</div>
-			<div class="form-group">
-				<%= f.label :password_confirmation %><br/>
-				<%= f.password_field :password_confirmation %>
-			</div>
-			<div class="form-group">
-				<%= f.submit %>
-			</div>
-		<% end %>
-		<p><%= link_to "Back" ,root_url , class: "btn btn-default"%></p>
+	<div class="form-group row">
+		<%= f.label :user, "User Name", class:"col-sm-2 control-label" %>
+		<div class="col-sm-4"><%= f.text_field :user, class: "form-control" %></div>
 	</div>
-</div>
+
+	<div class="form-group row">
+		<%= label_tag :email, "E-mail", class:"col-sm-2 control-label" %>
+		<div class="col-sm-4"><%= f.text_field :email, class: "form-control" %></div>	
+	</div>
+	<div class="form-group row" >
+		<%= label_tag :password, "Password", class:"col-sm-2 control-label" %>
+		<div class="col-sm-4"><%= f.password_field :password, class: "form-control" %></div>	
+	</div>
+	<div class="form-group row">
+		<%= f.label :password_confirmation, "Confirm Password", class:"col-sm-2 control-label" %>
+		<div class="col-sm-4"><%= f.password_field :password_confirmation, class: "form-control" %></div>
+	</div>
+	<div class="form-group row">
+		<div class="col-sm-offset-2 col-sm-4 ">
+			<%= f.submit "Submit", class: "btn btn-primary btn-default" %> <%= link_to "Back" ,root_url , class: "btn btn-default"%>
+		</div>
+	</div>
+	</fieldset>
+<% end %>
+	
