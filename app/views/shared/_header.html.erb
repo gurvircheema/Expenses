@@ -11,6 +11,9 @@
         </div>
         <div class="collapse navbar-collapse pull-right">
           <ul class="nav navbar-nav">
+            <% if current_user %>
+              <li><%= link_to current_user.user, user_path(current_user) %></li>
+            <% end %>
             <li><%= link_to "Home", root_url %></li>
             <li><%= link_to "Features", features_path %></a></li>
             <li><%= link_to "Contact Me", contact_path %></a></li>
