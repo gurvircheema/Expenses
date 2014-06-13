@@ -7,12 +7,12 @@
 
 		<% if current_user %>
 		<p class="lead">
-			Currently logged in as <%= link_to current_user.user, user_path(current_user), class: "" %>, <%= link_to "Log Out",session_path("current"), method: "delete", class: "btn btn-lg btn-danger" %>
+			Currently logged in as <%= link_to current_user.user, user_path(current_user), class: "" %>, <%= link_to "Log Out",session_path("current"), method: "delete", class: "btn btn-danger" %>
 		</p>
 
 		<% else %>
-		<p>Already a user? <%= link_to "Log in", login_url,class: "btn btn-default btn-lg" %></p> 
-		<p>New user? <%= link_to "Sign Up", signup_path,class: "btn btn-default btn-lg" %> </p>
+		<p>Already a user? <%= link_to "Log in", login_url,class: "btn btn-default" %></p> 
+		<p>New user? <%= link_to "Sign Up", signup_path,class: "btn btn-default" %> </p>
 		
 		<% end %>
 
