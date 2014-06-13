@@ -17,4 +17,20 @@ body {
 	padding-top: 60px;
 }
 
-body .footer { padding-top: 100px; }
+
+html body {
+	height: 900px;
+	color: white;
+}
+
+.jumbotron{
+	margin-top: 50px;
+}
+
+form{
+	color: black;
+}
+
+form label{
+	color: white;
+}
