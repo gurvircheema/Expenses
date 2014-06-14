@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
 
-    before_filter :authorize
+    before_filter :authenticate_user!
     def new
         @transaction = Transaction.new
         @categories = Category.all
