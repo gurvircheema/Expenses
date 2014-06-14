@@ -13,6 +13,8 @@ gem 'i18n', '0.6.9'
 # Use bootstrap css
 # gem 'twitter-bootstrap-rails'
 
+gem 'devise'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
