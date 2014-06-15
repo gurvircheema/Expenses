@@ -14,6 +14,7 @@ gem 'i18n', '0.6.9'
 # gem 'twitter-bootstrap-rails'
 
 gem 'devise'
+gem 'rails_admin'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
