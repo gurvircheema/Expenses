@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 	
-	has_many :transactions
+	has_many :transactions, dependent: :destroy
 
 	validates_uniqueness_of :email
 	
