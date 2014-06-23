@@ -1,5 +1,6 @@
 <h2>Welcome <b><i><%= current_user.user %></i></b></h2>
 
+<%= link_to "Summary", "#" , class: "btn btn-default"%>
 <h3>Summary of all expenses and savings</h3>
 
 
@@ -21,7 +22,7 @@
 			<td><%= f.created_at.strftime("%B %d, %Y") %></td>
 			<td><%= f.description %></td>
 			<td><%= f.amount %></td>
-			<td><%= f.income %></td>
+			<td>Yes</td>
 		</tr>
 		<% else %>
 		<tr>
@@ -29,7 +30,7 @@
 			<td><%= f.created_at.strftime("%B %d, %Y") %></td>
 			<td><%= f.description %></td>
 			<td><%= f.amount %></td>
-			<td><%= f.income %></td>
+			<td>No</td>
 		</tr>
 		<% end %>
 		<% end %>

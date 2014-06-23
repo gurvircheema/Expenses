@@ -10,6 +10,7 @@ Category.create(name: "Food", description: "Grocery, fruits, treats and other fo
 Category.create(name: "Entertainment", description: "Movies, iTunes, App Store and related expenses ")
 Category.create(name: "Education", description: "Tuition Fees, books, stationary")
 Category.create(name: "Automotive", description: "Car Repair, upgrade, oil change or service")
+Category.create(name: "Medications", description: "Doctors visit, medication, Physiotherapist, Chiropractor visits")
 Category.create(name: "Gas", description: "Car gas tank fill up")
 Category.create(name: "Clothing", description: "Shirts, pants, lowers, shorts, shoes, socks, underwears")
 Category.create(name: "Pay", description: "work pay received")
