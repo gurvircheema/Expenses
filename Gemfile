@@ -15,7 +15,7 @@ gem 'i18n', '0.6.9'
 
 gem 'devise'
 gem 'rails_admin'
-
+gem 'cancancan', '~> 1.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
