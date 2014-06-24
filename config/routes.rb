@@ -10,6 +10,7 @@ Expenses::Application.routes.draw do
   
   get "features", to: "home#features", as: "features"
   get "contact", to: "home#contact", as: "contact"
+  get "users", to: "home#index", as: "users"
   resources :transactions
   # resources :sessions
   resources :users
